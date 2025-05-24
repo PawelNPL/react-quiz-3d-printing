@@ -1,38 +1,113 @@
-.App {
+/* src/App.css */
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding-top: 20px; 
+}
+
+.app-container {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.question-container,
+.results-container {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.question-container h2 {
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.options-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.option-label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.option-label input[type="radio"] {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #007bff;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.results-container h2 {
+  color: #333;
+}
+
+.results-container ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.results-container li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.correct-answer {
+  border-left: 5px solid #28a745; 
+}
+.correct-answer strong::after {
+  content: " (Poprawnie)";
+  color: #28a745;
+  font-weight: normal;
+}
+
+
+.incorrect-answer {
+  border-left: 5px solid #dc3545; 
+}
+.incorrect-answer strong::after {
+  content: " (Błędnie)";
+  color: #dc3545;
+  font-weight: normal;
+}
+
+.incorrect-answer span {
+  display: block;
+  color: #555;
+  font-size: 0.9em;
+  margin-top: 5px;
 }
